@@ -11,10 +11,19 @@ import CatCard from './CatCard'
 // you want the default export
 // don't worry about it too much
 export class DisconnectedSingleCat extends React.Component {
+  // constructor() {
+  //   super();
+  //   this.state = {};
+  // }
+  // componentDidMount(){
+  //   const cat = this.props.loadCat();
+  // }
   render() {
+    // const {cat} = this.state;
+    // console.log('here111', cat);
     return (
       <div className='single-cat'>
-
+        <h2>{cat.name}</h2>
       </div >
     )
   }
@@ -22,13 +31,13 @@ export class DisconnectedSingleCat extends React.Component {
 
 export const mapStateToProps = (state) => {
   return {
-
+    ...state.cat
   }
 }
-
+//const loadCat = this.props.loadCat;
 export const mapDispatchToProps = (dispatch) => {
   return {
-
+    goGetCat: () => dispatch()
   }
 }
 

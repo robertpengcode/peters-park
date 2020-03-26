@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import CatCard from './CatCard'
- 
+
 // why are we exporting so much stuff you might ask?
 // and I would say good question
 // long story short, I need access to this stuff to test it
@@ -16,7 +16,6 @@ export class DisconnectedAllCats extends React.Component {
     return (
       <div className='all-cats'>
         <h1>Peter's Park</h1>
-        {CatCard}
       </div>
     )
   }

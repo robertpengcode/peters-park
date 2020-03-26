@@ -11,19 +11,22 @@ import CatCard from './CatCard'
 // you want the default export
 // don't worry about it too much
 export class DisconnectedSingleCat extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = {};
-  // }
-  // componentDidMount(){
-  //   const cat = this.props.loadCat();
-  // }
   render() {
-    // const {cat} = this.state;
-    // console.log('here111', cat);
+    console.log('here1',this.props);
     return (
       <div className='single-cat'>
-        <h2>{cat.name}</h2>
+        <h2>{this.props.name}</h2>
+        <img src={this.props.imageUrl}></img>
+        <ul className='toys'>{this.props.toyRatings.map((toy,id)=> (
+          <li key={id}>{toy.name}</li>)
+        )}</ul>
+        <div className='friends'>
+          <h3>Friends</h3>
+          <ul>{this.props.friends.map((friend)=> (
+          <li key={friend.id}><CatCard /></li>)
+        )}</ul>
+        </div>
+
       </div >
     )
   }

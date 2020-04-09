@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react' 
 import { connect } from 'react-redux'
 import CatCard from './CatCard'
 
@@ -13,9 +13,18 @@ import CatCard from './CatCard'
 export class DisconnectedAllCats extends React.Component {
 
   render() {
+    //{console.log('hihi', this.props.cats)}
     return (
       <div className='all-cats'>
         <h1>Peter's Park</h1>
+        <ul>
+          {this.props.cats.map(cat => {
+            return (
+              <CatCard name={cat.name} id={cat.id} key={cat.id}/>
+            )
+          }
+          )}
+        </ul> 
       </div>
     )
   }
@@ -37,7 +46,8 @@ export const mapDispatchToProps = (dispatch) => {
 // but this is the component you probably want in most cases
 // so if you're using DisconnectedAllCats somewhere else in your program
 // you're gonna have a bad time
-export default connect(mapStateToProps, mapDispatchToProps)(DisconnectedAllCats)
+export default connect(mapStateToProps,mapDispatchToProps)
+(DisconnectedAllCats)
 
 
 

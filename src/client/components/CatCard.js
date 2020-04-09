@@ -9,6 +9,7 @@ const CatCard = (props) => {
   return (
     <div class='cat-card'>
       YOUR CAT CARD CODE HERE
+      <span>{props.name}</span>
 
     </div>
   )

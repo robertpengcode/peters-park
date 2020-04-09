@@ -12,7 +12,7 @@ import CatCard from './CatCard'
 // don't worry about it too much
 export class DisconnectedSingleCat extends React.Component {
   render() {
-    console.log('here1',this.props);
+    //console.log('here1',this.props);
     return (
       <div className='single-cat'>
         <h2>{this.props.name}</h2>
@@ -22,11 +22,12 @@ export class DisconnectedSingleCat extends React.Component {
         )}</ul>
         <div className='friends'>
           <h3>Friends</h3>
-          <ul>{this.props.friends.map((friend)=> (
-          <li key={friend.id}><CatCard /></li>)
+          <ul>{this.props.friends.map((friend)=> {
+           return (
+            <CatCard key={friend.id}/>
+            )}
         )}</ul>
         </div>
-
       </div >
     )
   }
@@ -48,7 +49,8 @@ export const mapDispatchToProps = (dispatch) => {
 // but this is the component you probably want in most cases
 // so if you're using DisconnectedSingleCat somewhere else in your program
 // you're gonna have a bad time
-export default connect(mapStateToProps, mapDispatchToProps)(DisconnectedSingleCat)
+export default connect(mapStateToProps, mapDispatchToProps)
+(DisconnectedSingleCat)
 
 
 

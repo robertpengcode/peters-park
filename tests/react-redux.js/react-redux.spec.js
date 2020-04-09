@@ -61,25 +61,19 @@ describe('React-Redux MapBlanks', () => {
             bad: 'time'
           }
         }
-
         const mappedState = SingleCatMapState(fakeState)
         expect(mappedState).to.deep.equal(fakeState.cat)
-
       })
     })
-
     describe('mapDispatch', () => {
       it('should have a goGetCat property & should be a function', () => {
         const fakeDispatch = spy();
-
         const mappedDispatch = SingleCatMapDispatch(fakeDispatch)
         expect(mappedDispatch.goGetCat).to.not.be.an('undefined')
         expect(mappedDispatch.goGetCat).to.be.a('function')
       })
-
       it('should call the passed-in dispatch function when invoked', () => {
         const fakeDispatch = spy()
-
         const mappedDispatch = SingleCatMapDispatch(fakeDispatch)
         mappedDispatch.goGetCat()
         expect(fakeDispatch.calledOnce).to.equal(true)
